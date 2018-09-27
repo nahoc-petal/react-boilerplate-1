@@ -1,7 +1,16 @@
-import styled from 'styled-components';
+/**
+ * H2
+ */
 
-const H2 = styled.h2`
-  font-size: 1.5em;
-`;
+import React, { Children } from 'react';
+import PropTypes from 'prop-types';
+
+const H2 = props => (
+  <h2 className="subtitle">{Children.toArray(props.children)}</h2>
+);
+
+H2.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 export default H2;

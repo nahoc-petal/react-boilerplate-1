@@ -1,8 +1,16 @@
-import styled from 'styled-components';
+/**
+ * H1
+ */
 
-const H1 = styled.h1`
-  font-size: 2em;
-  margin-bottom: 0.25em;
-`;
+import React, { Children } from 'react';
+import PropTypes from 'prop-types';
+
+const H1 = props => (
+  <h1 className="title">{Children.toArray(props.children)}</h1>
+);
+
+H1.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 export default H1;
